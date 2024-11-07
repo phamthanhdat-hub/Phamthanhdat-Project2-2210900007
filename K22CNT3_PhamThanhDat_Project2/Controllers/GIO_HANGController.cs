@@ -74,6 +74,11 @@ namespace K22CNT3_PhamThanhDat_Project2.Controllers
                 return HttpNotFound();
             }
             ViewBag.MaKH = new SelectList(db.KHACH_HANG, "MaKH", "Ho_ten", gIO_HANG.MaKH);
+            ViewBag.TrangThaiList = new SelectList(new[]
+        {
+    new { Value = 1, Text = "Hoạt động" },
+    new { Value = 0, Text = "Không hoạt động" }
+      }, "Value", "Text", gIO_HANG.Trang_thai);
             return View(gIO_HANG);
         }
 

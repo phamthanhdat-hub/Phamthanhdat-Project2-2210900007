@@ -60,9 +60,9 @@
 
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Trang_thai, htmlAttributes: new { @class = "control-label col-md-2" })
+        <label class="control-label col-md-2">Trạng thái</label>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Trang_thai, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownListFor(model => model.Trang_thai, (SelectList)ViewBag.TrangThaiList, "-- Chọn trạng thái --", new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Trang_thai, "", new { @class = "text-danger" })
         </div>
     </div>

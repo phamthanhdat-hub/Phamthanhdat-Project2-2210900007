@@ -43,6 +43,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Trang_thai)
+            
         </th>
         <th></th>
     </tr>
@@ -81,6 +82,13 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Trang_thai)
+            @{ if (item.Trang_thai == 0)
+                {
+                    <span class="text-warning">Đang hiểm tra</span> }
+                else if (item.Trang_thai == 1)
+                {
+                    <span class="text-success">Đã nhập kho</span> } }
+        
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MaKH },new { @class = "btn btn-success" }) |

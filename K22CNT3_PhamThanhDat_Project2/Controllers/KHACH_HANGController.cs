@@ -101,6 +101,11 @@ namespace K22CNT3_PhamThanhDat_Project2.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.TrangThaiList = new SelectList(new[]
+        {
+    new { Value = 1, Text = "Hoạt động" },
+    new { Value = 0, Text = "Không hoạt động" }
+    }, "Value", "Text", kHACH_HANG.Trang_thai);
             return View(kHACH_HANG);
         }
 
